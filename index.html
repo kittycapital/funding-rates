@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>펀딩비 대시보드</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            color: #e4e4e7;
+            font-family: 'Noto Sans KR', sans-serif;
+            min-height: 100vh;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+            color: #ffffff;
+        }
+
+        .header p {
+            font-size: 0.8rem;
+            color: #71717a;
+        }
+
+        /* Sentiment Summary */
+        .sentiment-summary {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .sentiment-card {
+            background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
+            border: 1px solid #222222;
+            border-radius: 12px;
+            padding: 20px 32px;
+            text-align: center;
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .sentiment-card.bullish {
+            border-color: #22c55e33;
+        }
+
+        .sentiment-card.neutral {
+            border-color: #71717a33;
+        }
+
+        .sentiment-card.bearish {
+            border-color: #ef444433;
+        }
+
+        .sentiment-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .sentiment-label {
+            font-size: 0.75rem;
+            color: #71717a;
+            margin-bottom: 4px;
+        }
+
+        .sentiment-count {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .sentiment-card.bullish .sentiment-count {
+            color: #22c55e;
+        }
+
+        .sentiment-card.neutral .sentiment-count {
+            color: #71717a;
+        }
+
+        .sentiment-card.bearish .sentiment-count {
+            color: #ef4444;
+        }
+
+        /* Table Section */
+        .table-section {
+            background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
+            border: 1px solid #222222;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .table-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid #222222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .table-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .table-legend {
+            display: flex;
+            gap: 16px;
+            font-size: 0.7rem;
+            color: #71717a;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+
+        .legend-color.positive {
+            background: #22c55e;
+        }
+
+        .legend-color.negative {
+            background: #ef4444;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        th {
+            background: #0a0a0a;
+            color: #71717a;
+            font-weight: 500;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #222222;
+            position: sticky;
+            top: 0;
+        }
+
+        th:first-child,
+        td:first-child {
+            text-align: left;
+            position: sticky;
+            left: 0;
+            background: #050505;
+            z-index: 1;
+        }
+
+        th:first-child {
+            background: #0a0a0a;
+            z-index: 2;
+        }
+
+        th:last-child,
+        td:last-child {
+            background: #0d0d0d;
+            font-weight: 600;
+        }
+
+        th:last-child {
+            background: #111111;
+        }
+
+        tr {
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        tr:hover td:first-child {
+            background: #0a0a0a;
+        }
+
+        .coin-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .coin-name {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .rate-cell {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        .rate-positive {
+            color: #22c55e;
+        }
+
+        .rate-negative {
+            color: #ef4444;
+        }
+
+        .rate-neutral {
+            color: #71717a;
+        }
+
+        .rate-na {
+            color: #3f3f46;
+        }
+
+        .sentiment-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 500;
+        }
+
+        .sentiment-badge.bullish {
+            background: #22c55e22;
+            color: #22c55e;
+        }
+
+        .sentiment-badge.neutral {
+            background: #71717a22;
+            color: #71717a;
+        }
+
+        .sentiment-badge.bearish {
+            background: #ef444422;
+            color: #ef4444;
+        }
+
+        .last-updated {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.75rem;
+            color: #52525b;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #71717a;
+        }
+
+        .error {
+            text-align: center;
+            padding: 60px 20px;
+            color: #ef4444;
+        }
+
+        .exchange-type {
+            font-size: 0.6rem;
+            padding: 2px 4px;
+            border-radius: 3px;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        .exchange-type.cex {
+            background: #3b82f622;
+            color: #3b82f6;
+        }
+
+        .exchange-type.dex {
+            background: #a855f722;
+            color: #a855f7;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+            }
+
+            .sentiment-summary {
+                gap: 8px;
+            }
+
+            .sentiment-card {
+                padding: 16px 20px;
+            }
+
+            .sentiment-count {
+                font-size: 1.2rem;
+            }
+
+            th, td {
+                padding: 10px 12px;
+                font-size: 0.7rem;
+            }
+
+            .rate-cell {
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>펀딩비 대시보드</h1>
+            <p>주요 거래소 펀딩비 비교 및 시장 심리 분석</p>
+        </div>
+
+        <!-- Sentiment Summary -->
+        <div class="sentiment-summary" id="sentiment-summary">
+            <div class="sentiment-card bullish">
+                <div class="sentiment-icon">🟢</div>
+                <div class="sentiment-label">강세</div>
+                <div class="sentiment-count" id="bullish-count">-</div>
+            </div>
+            <div class="sentiment-card neutral">
+                <div class="sentiment-icon">⚪</div>
+                <div class="sentiment-label">중립</div>
+                <div class="sentiment-count" id="neutral-count">-</div>
+            </div>
+            <div class="sentiment-card bearish">
+                <div class="sentiment-icon">🔴</div>
+                <div class="sentiment-label">약세</div>
+                <div class="sentiment-count" id="bearish-count">-</div>
+            </div>
+        </div>
+
+        <!-- Funding Rates Table -->
+        <div class="table-section">
+            <div class="table-header">
+                <div class="table-title">펀딩비 테이블 (8시간 기준)</div>
+                <div class="table-legend">
+                    <div class="legend-item">
+                        <div class="legend-color positive"></div>
+                        <span>양수 (강세)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color negative"></div>
+                        <span>음수 (약세)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="table-container">
+                <table id="funding-table">
+                    <thead>
+                        <tr id="table-header-row">
+                            <th>코인</th>
+                            <!-- Exchange headers will be inserted here -->
+                            <th>평균</th>
+                            <th>심리</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr>
+                            <td colspan="12" class="loading">데이터 로딩 중...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="last-updated" id="last-updated"></div>
+    </div>
+
+    <script>
+        let data = null;
+
+        function formatRate(rate) {
+            if (rate === null || rate === undefined) {
+                return { text: '-', class: 'rate-na' };
+            }
+            
+            const percent = (rate * 100).toFixed(4);
+            let rateClass = 'rate-neutral';
+            
+            if (rate > 0.0001) {
+                rateClass = 'rate-positive';
+            } else if (rate < -0.0001) {
+                rateClass = 'rate-negative';
+            }
+            
+            const sign = rate >= 0 ? '' : '';
+            return { text: `${sign}${percent}%`, class: rateClass };
+        }
+
+        function getSentimentText(sentiment) {
+            switch (sentiment) {
+                case 'bullish': return '강세';
+                case 'bearish': return '약세';
+                default: return '중립';
+            }
+        }
+
+        function renderTable() {
+            if (!data) return;
+
+            // Update sentiment summary
+            document.getElementById('bullish-count').textContent = data.summary.bullish;
+            document.getElementById('neutral-count').textContent = data.summary.neutral;
+            document.getElementById('bearish-count').textContent = data.summary.bearish;
+
+            // Build header
+            const headerRow = document.getElementById('table-header-row');
+            headerRow.innerHTML = '<th>코인</th>';
+            
+            data.exchanges.forEach(exchange => {
+                const typeClass = exchange.type;
+                const typeLabel = exchange.type.toUpperCase();
+                headerRow.innerHTML += `
+                    <th>
+                        ${exchange.name}
+                        <span class="exchange-type ${typeClass}">${typeLabel}</span>
+                    </th>
+                `;
+            });
+            
+            headerRow.innerHTML += '<th>평균</th><th>심리</th>';
+
+            // Build body
+            const tbody = document.getElementById('table-body');
+            tbody.innerHTML = '';
+
+            data.coins.forEach(coin => {
+                const row = document.createElement('tr');
+                
+                // Coin name
+                row.innerHTML = `
+                    <td>
+                        <div class="coin-cell">
+                            <span class="coin-name">${coin.coin}</span>
+                        </div>
+                    </td>
+                `;
+
+                // Exchange rates
+                data.exchanges.forEach(exchange => {
+                    const rate = coin.rates[exchange.id];
+                    const formatted = formatRate(rate);
+                    row.innerHTML += `<td class="rate-cell ${formatted.class}">${formatted.text}</td>`;
+                });
+
+                // Average
+                const avgFormatted = formatRate(coin.average);
+                row.innerHTML += `<td class="rate-cell ${avgFormatted.class}">${avgFormatted.text}</td>`;
+
+                // Sentiment
+                row.innerHTML += `
+                    <td>
+                        <span class="sentiment-badge ${coin.sentiment}">${getSentimentText(coin.sentiment)}</span>
+                    </td>
+                `;
+
+                tbody.appendChild(row);
+            });
+
+            // Update timestamp
+            if (data.lastUpdated) {
+                const date = new Date(data.lastUpdated);
+                document.getElementById('last-updated').textContent = 
+                    `마지막 업데이트: ${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일 ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+            }
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) throw new Error('data.json을 찾을 수 없습니다');
+                data = await response.json();
+                renderTable();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('table-body').innerHTML = 
+                    `<tr><td colspan="12" class="error">데이터 로딩 실패: ${error.message}</td></tr>`;
+            }
+        }
+
+        // Initialize
+        loadData();
+    </script>
+</body>
+</html>
