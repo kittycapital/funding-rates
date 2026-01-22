@@ -1,0 +1,341 @@
+{
+  "coins": [
+    {
+      "coin": "BTC",
+      "rates": {
+        "binance": 0.0001,
+        "bybit": 0.00012,
+        "okx": 0.00009,
+        "bitget": 0.00011,
+        "gate": 0.0001,
+        "kucoin": 0.00008,
+        "mexc": 0.00012,
+        "hyperliquid": 0.00015,
+        "lighter": 0.00013
+      },
+      "average": 0.00011,
+      "sentiment": "bullish"
+    },
+    {
+      "coin": "ETH",
+      "rates": {
+        "binance": 0.00008,
+        "bybit": 0.00009,
+        "okx": 0.00007,
+        "bitget": 0.00008,
+        "gate": 0.00006,
+        "kucoin": 0.00007,
+        "mexc": 0.00009,
+        "hyperliquid": 0.00012,
+        "lighter": 0.0001
+      },
+      "average": 0.000084,
+      "sentiment": "bullish"
+    },
+    {
+      "coin": "BNB",
+      "rates": {
+        "binance": 0.00005,
+        "bybit": 0.00004,
+        "okx": 0.00003,
+        "bitget": 0.00004,
+        "gate": 0.00005,
+        "kucoin": 0.00003,
+        "mexc": 0.00004,
+        "hyperliquid": null,
+        "lighter": null
+      },
+      "average": 0.00004,
+      "sentiment": "neutral"
+    },
+    {
+      "coin": "SOL",
+      "rates": {
+        "binance": -0.0002,
+        "bybit": -0.00018,
+        "okx": -0.00022,
+        "bitget": -0.00019,
+        "gate": -0.00021,
+        "kucoin": -0.00017,
+        "mexc": -0.0002,
+        "hyperliquid": -0.00025,
+        "lighter": -0.00023
+      },
+      "average": -0.000205,
+      "sentiment": "bearish"
+    },
+    {
+      "coin": "XRP",
+      "rates": {
+        "binance": 0.00015,
+        "bybit": 0.00014,
+        "okx": 0.00016,
+        "bitget": 0.00013,
+        "gate": 0.00015,
+        "kucoin": 0.00012,
+        "mexc": 0.00014,
+        "hyperliquid": 0.00018,
+        "lighter": 0.00016
+      },
+      "average": 0.000148,
+      "sentiment": "bullish"
+    },
+    {
+      "coin": "DOGE",
+      "rates": {
+        "binance": 0.0003,
+        "bybit": 0.00028,
+        "okx": 0.00032,
+        "bitget": 0.00029,
+        "gate": 0.00031,
+        "kucoin": 0.00027,
+        "mexc": 0.0003,
+        "hyperliquid": 0.00035,
+        "lighter": 0.00033
+      },
+      "average": 0.000305,
+      "sentiment": "bullish"
+    },
+    {
+      "coin": "ADA",
+      "rates": {
+        "binance": -0.00005,
+        "bybit": -0.00004,
+        "okx": -0.00006,
+        "bitget": -0.00005,
+        "gate": -0.00004,
+        "kucoin": -0.00003,
+        "mexc": -0.00005,
+        "hyperliquid": -0.00007,
+        "lighter": -0.00006
+      },
+      "average": -0.00005,
+      "sentiment": "neutral"
+    },
+    {
+      "coin": "AVAX",
+      "rates": {
+        "binance": -0.00012,
+        "bybit": -0.00011,
+        "okx": -0.00013,
+        "bitget": -0.00012,
+        "gate": -0.00014,
+        "kucoin": -0.0001,
+        "mexc": -0.00012,
+        "hyperliquid": -0.00015,
+        "lighter": -0.00014
+      },
+      "average": -0.000126,
+      "sentiment": "bearish"
+    },
+    {
+      "coin": "LINK",
+      "rates": {
+        "binance": 0.00006,
+        "bybit": 0.00005,
+        "okx": 0.00007,
+        "bitget": 0.00006,
+        "gate": 0.00005,
+        "kucoin": 0.00004,
+        "mexc": 0.00006,
+        "hyperliquid": 0.00008,
+        "lighter": 0.00007
+      },
+      "average": 0.00006,
+      "sentiment": "bullish"
+    },
+    {
+      "coin": "TRX",
+      "rates": {
+        "binance": 0.00002,
+        "bybit": 0.00001,
+        "okx": 0.00002,
+        "bitget": 0.00002,
+        "gate": 0.00001,
+        "kucoin": 0.00001,
+        "mexc": 0.00002,
+        "hyperliquid": null,
+        "lighter": null
+      },
+      "average": 0.000016,
+      "sentiment": "neutral"
+    },
+    {
+      "coin": "TON",
+      "rates": {
+        "binance": 0.00008,
+        "bybit": 0.00007,
+        "okx": 0.00009,
+        "bitget": 0.00008,
+        "gate": 0.00007,
+        "kucoin": 0.00006,
+        "mexc": 0.00008,
+        "hyperliquid": null,
+        "lighter": null
+      },
+      "average": 0.000076,
+      "sentiment": "bullish"
+    },
+    {
+      "coin": "SUI",
+      "rates": {
+        "binance": -0.0001,
+        "bybit": -0.00009,
+        "okx": -0.00011,
+        "bitget": -0.0001,
+        "gate": -0.00012,
+        "kucoin": -0.00008,
+        "mexc": -0.0001,
+        "hyperliquid": -0.00013,
+        "lighter": -0.00012
+      },
+      "average": -0.000106,
+      "sentiment": "bearish"
+    },
+    {
+      "coin": "XLM",
+      "rates": {
+        "binance": 0.00004,
+        "bybit": 0.00003,
+        "okx": 0.00004,
+        "bitget": 0.00003,
+        "gate": 0.00004,
+        "kucoin": 0.00002,
+        "mexc": 0.00003,
+        "hyperliquid": null,
+        "lighter": null
+      },
+      "average": 0.000033,
+      "sentiment": "neutral"
+    },
+    {
+      "coin": "HBAR",
+      "rates": {
+        "binance": 0.00006,
+        "bybit": 0.00005,
+        "okx": 0.00007,
+        "bitget": 0.00006,
+        "gate": 0.00005,
+        "kucoin": 0.00004,
+        "mexc": 0.00006,
+        "hyperliquid": null,
+        "lighter": null
+      },
+      "average": 0.000056,
+      "sentiment": "bullish"
+    },
+    {
+      "coin": "DOT",
+      "rates": {
+        "binance": -0.00003,
+        "bybit": -0.00002,
+        "okx": -0.00004,
+        "bitget": -0.00003,
+        "gate": -0.00003,
+        "kucoin": -0.00002,
+        "mexc": -0.00003,
+        "hyperliquid": -0.00005,
+        "lighter": -0.00004
+      },
+      "average": -0.000032,
+      "sentiment": "neutral"
+    },
+    {
+      "coin": "BCH",
+      "rates": {
+        "binance": 0.00007,
+        "bybit": 0.00006,
+        "okx": 0.00008,
+        "bitget": 0.00007,
+        "gate": 0.00006,
+        "kucoin": 0.00005,
+        "mexc": 0.00007,
+        "hyperliquid": 0.0001,
+        "lighter": 0.00009
+      },
+      "average": 0.000072,
+      "sentiment": "bullish"
+    },
+    {
+      "coin": "LTC",
+      "rates": {
+        "binance": 0.00003,
+        "bybit": 0.00002,
+        "okx": 0.00003,
+        "bitget": 0.00003,
+        "gate": 0.00002,
+        "kucoin": 0.00002,
+        "mexc": 0.00003,
+        "hyperliquid": 0.00004,
+        "lighter": 0.00003
+      },
+      "average": 0.000028,
+      "sentiment": "neutral"
+    },
+    {
+      "coin": "UNI",
+      "rates": {
+        "binance": -0.00008,
+        "bybit": -0.00007,
+        "okx": -0.00009,
+        "bitget": -0.00008,
+        "gate": -0.0001,
+        "kucoin": -0.00006,
+        "mexc": -0.00008,
+        "hyperliquid": -0.00012,
+        "lighter": -0.0001
+      },
+      "average": -0.000087,
+      "sentiment": "bearish"
+    },
+    {
+      "coin": "APT",
+      "rates": {
+        "binance": -0.00006,
+        "bybit": -0.00005,
+        "okx": -0.00007,
+        "bitget": -0.00006,
+        "gate": -0.00008,
+        "kucoin": -0.00004,
+        "mexc": -0.00006,
+        "hyperliquid": -0.00009,
+        "lighter": -0.00008
+      },
+      "average": -0.000066,
+      "sentiment": "bearish"
+    },
+    {
+      "coin": "NEAR",
+      "rates": {
+        "binance": 0.00002,
+        "bybit": 0.00001,
+        "okx": 0.00002,
+        "bitget": 0.00002,
+        "gate": 0.00001,
+        "kucoin": 0.00001,
+        "mexc": 0.00002,
+        "hyperliquid": 0.00003,
+        "lighter": 0.00002
+      },
+      "average": 0.000018,
+      "sentiment": "neutral"
+    }
+  ],
+  "summary": {
+    "bullish": 8,
+    "bearish": 5,
+    "neutral": 7
+  },
+  "exchanges": [
+    {"id": "binance", "name": "Binance", "type": "cex"},
+    {"id": "bybit", "name": "Bybit", "type": "cex"},
+    {"id": "okx", "name": "OKX", "type": "cex"},
+    {"id": "bitget", "name": "Bitget", "type": "cex"},
+    {"id": "gate", "name": "Gate.io", "type": "cex"},
+    {"id": "kucoin", "name": "KuCoin", "type": "cex"},
+    {"id": "mexc", "name": "MEXC", "type": "cex"},
+    {"id": "hyperliquid", "name": "Hyperliquid", "type": "dex"},
+    {"id": "lighter", "name": "Lighter", "type": "dex"}
+  ],
+  "lastUpdated": "2026-01-23T00:00:00Z"
+}
