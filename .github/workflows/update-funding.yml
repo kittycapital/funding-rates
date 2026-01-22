@@ -1,0 +1,35 @@
+name: Update Funding Rates
+
+on:
+  schedule:
+    # Run every 12 hours: 00:00, 12:00 UTC
+    - cron: '0 */12 * * *'
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests
+      
+      - name: Fetch funding rates
+        run: python fetch_funding.py
+      
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data.json
+          git diff --staged --quiet || git commit -m "Update funding rates - $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
