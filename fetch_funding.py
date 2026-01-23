@@ -1,6 +1,7 @@
 """
-Funding Rates Fetcher - Fixed Version
+Funding Rates Fetcher - Fixed Version v2
 Fetches funding rates from 9 exchanges for top 20 coins by market cap.
+Added User-Agent headers and alternative endpoints.
 """
 
 import json
@@ -15,14 +16,20 @@ COINS = [
     'TON', 'SUI', 'XLM', 'HBAR', 'DOT', 'BCH', 'LTC', 'UNI', 'APT', 'NEAR'
 ]
 
+# Common headers to avoid blocks
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'application/json',
+    'Accept-Language': 'en-US,en;q=0.9',
+}
+
 
 def fetch_binance():
     """Fetch funding rates from Binance using premiumIndex endpoint"""
     rates = {}
     try:
-        # Use premiumIndex which returns current funding rate for all symbols
         url = 'https://fapi.binance.com/fapi/v1/premiumIndex'
-        response = requests.get(url, timeout=15)
+        response = requests.get(url, headers=HEADERS, timeout=20)
         response.raise_for_status()
         data = response.json()
         
@@ -46,7 +53,7 @@ def fetch_bybit():
     rates = {}
     try:
         url = 'https://api.bybit.com/v5/market/tickers?category=linear'
-        response = requests.get(url, timeout=15)
+        response = requests.get(url, headers=HEADERS, timeout=20)
         response.raise_for_status()
         data = response.json()
         
@@ -55,8 +62,8 @@ def fetch_bybit():
                 symbol = item.get('symbol', '')
                 for coin in COINS:
                     if symbol == f'{coin}USDT':
-                        rate_str = item.get('fundingRate', '0')
-                        if rate_str:
+                        rate_str = item.get('fundingRate', '')
+                        if rate_str and rate_str != '':
                             rate = float(rate_str)
                             rates[coin] = rate
                         break
@@ -72,18 +79,15 @@ def fetch_okx():
     """Fetch funding rates from OKX"""
     rates = {}
     try:
-        # OKX can fetch all funding rates at once
-        url = 'https://www.okx.com/api/v5/public/funding-rate?instId='
-        
         for coin in COINS:
             try:
-                inst_url = f'https://www.okx.com/api/v5/public/funding-rate?instId={coin}-USDT-SWAP'
-                response = requests.get(inst_url, timeout=10)
+                url = f'https://www.okx.com/api/v5/public/funding-rate?instId={coin}-USDT-SWAP'
+                response = requests.get(url, headers=HEADERS, timeout=10)
                 response.raise_for_status()
                 data = response.json()
                 
                 if data.get('code') == '0' and data.get('data'):
-                    rate_str = data['data'][0].get('fundingRate', '0')
+                    rate_str = data['data'][0].get('fundingRate', '')
                     if rate_str:
                         rate = float(rate_str)
                         rates[coin] = rate
@@ -102,7 +106,7 @@ def fetch_bitget():
     rates = {}
     try:
         url = 'https://api.bitget.com/api/v2/mix/market/tickers?productType=USDT-FUTURES'
-        response = requests.get(url, timeout=15)
+        response = requests.get(url, headers=HEADERS, timeout=20)
         response.raise_for_status()
         data = response.json()
         
@@ -111,7 +115,7 @@ def fetch_bitget():
                 symbol = item.get('symbol', '')
                 for coin in COINS:
                     if symbol == f'{coin}USDT':
-                        rate_str = item.get('fundingRate', '0')
+                        rate_str = item.get('fundingRate', '')
                         if rate_str:
                             rate = float(rate_str)
                             rates[coin] = rate
@@ -129,7 +133,7 @@ def fetch_gate():
     rates = {}
     try:
         url = 'https://api.gateio.ws/api/v4/futures/usdt/contracts'
-        response = requests.get(url, timeout=15)
+        response = requests.get(url, headers=HEADERS, timeout=20)
         response.raise_for_status()
         data = response.json()
         
@@ -137,7 +141,7 @@ def fetch_gate():
             name = item.get('name', '')
             for coin in COINS:
                 if name == f'{coin}_USDT':
-                    rate_str = item.get('funding_rate', '0')
+                    rate_str = item.get('funding_rate', '')
                     if rate_str:
                         rate = float(rate_str)
                         rates[coin] = rate
@@ -155,7 +159,7 @@ def fetch_kucoin():
     rates = {}
     try:
         url = 'https://api-futures.kucoin.com/api/v1/contracts/active'
-        response = requests.get(url, timeout=15)
+        response = requests.get(url, headers=HEADERS, timeout=20)
         response.raise_for_status()
         data = response.json()
         
@@ -164,7 +168,7 @@ def fetch_kucoin():
                 symbol = item.get('symbol', '')
                 for coin in COINS:
                     if symbol == f'{coin}USDTM':
-                        rate_str = item.get('fundingFeeRate', '0')
+                        rate_str = item.get('fundingFeeRate', '')
                         if rate_str:
                             rate = float(rate_str)
                             rates[coin] = rate
@@ -182,7 +186,7 @@ def fetch_mexc():
     rates = {}
     try:
         url = 'https://contract.mexc.com/api/v1/contract/funding_rate'
-        response = requests.get(url, timeout=15)
+        response = requests.get(url, headers=HEADERS, timeout=20)
         response.raise_for_status()
         data = response.json()
         
@@ -191,7 +195,7 @@ def fetch_mexc():
                 symbol = item.get('symbol', '')
                 for coin in COINS:
                     if symbol == f'{coin}_USDT':
-                        rate_str = item.get('fundingRate', '0')
+                        rate_str = item.get('fundingRate', '')
                         if rate_str:
                             rate = float(rate_str)
                             rates[coin] = rate
@@ -213,8 +217,8 @@ def fetch_hyperliquid():
         response = requests.post(
             url,
             json=payload,
-            headers={"Content-Type": "application/json"},
-            timeout=15
+            headers={**HEADERS, "Content-Type": "application/json"},
+            timeout=20
         )
         response.raise_for_status()
         data = response.json()
@@ -226,9 +230,9 @@ def fetch_hyperliquid():
             for i, asset in enumerate(meta.get('universe', [])):
                 coin = asset.get('name', '')
                 if coin in COINS and i < len(contexts):
-                    # Hyperliquid has 1h funding, multiply by 8 for 8h equivalent
-                    rate_str = contexts[i].get('funding', '0')
+                    rate_str = contexts[i].get('funding', '')
                     if rate_str:
+                        # Hyperliquid has 1h funding, multiply by 8 for 8h equivalent
                         rate = float(rate_str) * 8
                         rates[coin] = rate
         
@@ -243,23 +247,21 @@ def fetch_lighter():
     """Fetch funding rates from Lighter (1h funding, convert to 8h)"""
     rates = {}
     try:
-        url = 'https://mainnet.zklighter.elliot.ai/api/v1/funding-rates'
-        response = requests.get(url, timeout=15)
+        # Try to get orderbooks info which contains funding rates
+        url = 'https://mainnet.zklighter.elliot.ai/api/v1/orderbooks'
+        response = requests.get(url, headers=HEADERS, timeout=20)
         response.raise_for_status()
         data = response.json()
         
-        # Handle different response formats
-        funding_data = data.get('funding_rates', data) if isinstance(data, dict) else data
-        
-        if isinstance(funding_data, list):
-            for item in funding_data:
-                symbol = str(item.get('symbol', item.get('market', ''))).upper()
+        if isinstance(data, list):
+            for item in data:
+                symbol = str(item.get('symbol', item.get('market', item.get('name', '')))).upper()
                 for coin in COINS:
-                    if coin in symbol:
-                        rate_str = item.get('funding_rate', item.get('fundingRate', '0'))
-                        if rate_str:
-                            # Lighter has 1h funding, multiply by 8 for 8h equivalent
-                            rate = float(rate_str) * 8
+                    if coin in symbol and 'USD' in symbol:
+                        # Try different field names
+                        rate_str = item.get('funding_rate', item.get('fundingRate', item.get('funding', '')))
+                        if rate_str and rate_str != '':
+                            rate = float(rate_str) * 8  # Convert 1h to 8h
                             rates[coin] = rate
                         break
         
@@ -282,10 +284,9 @@ def calculate_sentiment(avg_rate):
 
 def main():
     print("=" * 50)
-    print("Funding Rates Fetcher - Fixed Version")
+    print("Funding Rates Fetcher - v2")
     print("=" * 50)
     
-    # Fetch from all exchanges
     print("\nFetching funding rates...")
     
     all_rates = {
@@ -357,11 +358,6 @@ def main():
     print(f"  🟢 강세: {bullish_count}")
     print(f"  ⚪ 중립: {neutral_count}")
     print(f"  🔴 약세: {bearish_count}")
-    
-    # Print sample data
-    print(f"\n샘플 데이터:")
-    for coin_data in coins_data[:3]:
-        print(f"  {coin_data['coin']}: 평균 {coin_data['average']*100:.4f}% ({coin_data['sentiment']})")
     
     # Save to JSON
     with open(DATA_FILE, 'w') as f:
