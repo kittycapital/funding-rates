@@ -3,7 +3,7 @@ name: Update Funding Rates
 on:
   schedule:
     # Run every 12 hours: 00:00, 12:00 UTC
-    - cron: '0 */12 * * *'
+    - cron: '0 6 * * *'
   workflow_dispatch:  # Manual trigger
 
 jobs:
