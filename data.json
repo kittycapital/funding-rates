@@ -5,15 +5,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": 4.09953175007e-05,
-        "bitget": 1.4e-05,
+        "okx": 1.67096217829e-05,
+        "bitget": -4.5e-05,
         "gate": null,
         "kucoin": null,
-        "mexc": 5.9e-05,
-        "hyperliquid": 2.23032e-05,
+        "mexc": 1.9e-05,
+        "hyperliquid": 3.86336e-05,
         "lighter": null
       },
-      "average": 3.4074629375175e-05,
+      "average": 7.335805445725e-06,
       "sentiment": "neutral"
     },
     {
@@ -21,15 +21,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": 4.96080287529e-05,
-        "bitget": 3.5e-05,
+        "okx": 5.16127312439e-05,
+        "bitget": -8e-06,
         "gate": null,
-        "kucoin": 5.3e-05,
-        "mexc": 0.0001,
-        "hyperliquid": 0.0001,
+        "kucoin": 5.8e-05,
+        "mexc": 5.2e-05,
+        "hyperliquid": 5.936e-05,
         "lighter": null
       },
-      "average": 6.752160575058e-05,
+      "average": 4.259454624878e-05,
       "sentiment": "neutral"
     },
     {
@@ -37,15 +37,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": -4.6437408416e-06,
-        "bitget": 0.0001,
+        "okx": 0.0001,
+        "bitget": 6.6e-05,
         "gate": null,
         "kucoin": 0.0001,
-        "mexc": 7.2e-05,
-        "hyperliquid": 7.7744e-05,
+        "mexc": 4.8e-05,
+        "hyperliquid": -0.0001469984,
         "lighter": null
       },
-      "average": 6.902005183168001e-05,
+      "average": 3.340032000000001e-05,
       "sentiment": "neutral"
     },
     {
@@ -53,15 +53,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": -9.45901022333e-05,
-        "bitget": -7.7e-05,
+        "okx": -0.0001132842915065,
+        "bitget": -0.000135,
         "gate": null,
-        "kucoin": -0.000117,
-        "mexc": -5.8e-05,
-        "hyperliquid": 3.6784e-06,
+        "kucoin": -7.1e-05,
+        "mexc": -0.000204,
+        "hyperliquid": 1.01552e-05,
         "lighter": null
       },
-      "average": -6.858234044666e-05,
+      "average": -0.00010262581830129999,
       "sentiment": "neutral"
     },
     {
@@ -69,15 +69,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": -5.16172579662e-05,
-        "bitget": 7e-06,
+        "okx": 0.0001,
+        "bitget": 5e-06,
         "gate": null,
-        "kucoin": 8.4e-05,
-        "mexc": -3.9e-05,
-        "hyperliquid": 1.10248e-05,
+        "kucoin": -1.8e-05,
+        "mexc": -2.5e-05,
+        "hyperliquid": -6.74584e-05,
         "lighter": null
       },
-      "average": 2.2815084067599993e-06,
+      "average": -1.0916800000000004e-06,
       "sentiment": "neutral"
     },
     {
@@ -85,15 +85,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": 5.5132615004e-06,
-        "bitget": 4.6e-05,
+        "okx": -4.45192642459e-05,
+        "bitget": 3.9e-05,
         "gate": null,
-        "kucoin": 2.7e-05,
-        "mexc": 8.3e-05,
-        "hyperliquid": 0.0001,
+        "kucoin": -0.000132,
+        "mexc": 4.8e-05,
+        "hyperliquid": 7.5464e-06,
         "lighter": null
       },
-      "average": 5.230265230008e-05,
+      "average": -1.6394572849180004e-05,
       "sentiment": "neutral"
     },
     {
@@ -101,15 +101,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": 6.47564353761e-05,
-        "bitget": -2.7e-05,
+        "okx": 0.0001,
+        "bitget": 4.4e-05,
         "gate": null,
-        "kucoin": -8.6e-05,
-        "mexc": 4.3e-05,
-        "hyperliquid": -1.2172e-05,
+        "kucoin": -3.9e-05,
+        "mexc": 4.6e-05,
+        "hyperliquid": -0.0001499648,
         "lighter": null
       },
-      "average": -3.4831129247799996e-06,
+      "average": 2.0704000000000403e-07,
       "sentiment": "neutral"
     },
     {
@@ -117,15 +117,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": 3.56123937058e-05,
+        "okx": 8.40175873159e-05,
         "bitget": 0.0001,
         "gate": null,
-        "kucoin": 7.3e-05,
-        "mexc": 6e-05,
+        "kucoin": 0.0001,
+        "mexc": 2.5e-05,
         "hyperliquid": 0.0001,
         "lighter": null
       },
-      "average": 7.372247874115999e-05,
+      "average": 8.180351746318e-05,
       "sentiment": "neutral"
     },
     {
@@ -133,15 +133,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": 5.14637402313e-05,
-        "bitget": 0.0001,
+        "okx": 4.31523505899e-05,
+        "bitget": -4.7e-05,
         "gate": null,
         "kucoin": 0.0001,
-        "mexc": 8.3e-05,
+        "mexc": 3.9e-05,
         "hyperliquid": 0.0001,
         "lighter": null
       },
-      "average": 8.689274804626001e-05,
+      "average": 4.703047011798e-05,
       "sentiment": "neutral"
     },
     {
@@ -149,31 +149,31 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": -4.50623602442e-05,
-        "bitget": -7.4e-05,
+        "okx": -0.0005860369336951,
+        "bitget": -0.000797,
         "gate": null,
-        "kucoin": -0.000377,
-        "mexc": -0.000297,
-        "hyperliquid": -0.000337372,
+        "kucoin": -0.000797,
+        "mexc": -0.000927,
+        "hyperliquid": -0.0012880088,
         "lighter": null
       },
-      "average": -0.00022608687204884,
-      "sentiment": "neutral"
+      "average": -0.00087900914673902,
+      "sentiment": "bearish"
     },
     {
       "coin": "TON",
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": 8.50450135143e-05,
-        "bitget": 5e-05,
+        "okx": -0.0001936290645391,
+        "bitget": -8.9e-05,
         "gate": null,
         "kucoin": 5e-05,
         "mexc": 0.0002,
-        "hyperliquid": 0.0001,
+        "hyperliquid": -0.0005388216,
         "lighter": null
       },
-      "average": 9.700900270286e-05,
+      "average": -0.00011429013290782,
       "sentiment": "neutral"
     },
     {
@@ -181,15 +181,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": -9.90339166835e-05,
-        "bitget": -3.8e-05,
+        "okx": 5.78003191475e-05,
+        "bitget": 5e-06,
         "gate": null,
-        "kucoin": 4.6e-05,
-        "mexc": 1.4e-05,
-        "hyperliquid": -2.04336e-05,
+        "kucoin": 7.3e-05,
+        "mexc": 3.6e-05,
+        "hyperliquid": 0.0001,
         "lighter": null
       },
-      "average": -1.9493503336699998e-05,
+      "average": 5.436006382950001e-05,
       "sentiment": "neutral"
     },
     {
@@ -197,15 +197,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": -0.0001398248628445,
+        "okx": 9.35773715498e-05,
         "bitget": 0.0001,
         "gate": null,
-        "kucoin": 4.1e-05,
-        "mexc": 0.0001,
-        "hyperliquid": -0.00017828,
+        "kucoin": -0.000145,
+        "mexc": 5.3e-05,
+        "hyperliquid": -4.70024e-05,
         "lighter": null
       },
-      "average": -1.5420972568900003e-05,
+      "average": 1.0914994309959998e-05,
       "sentiment": "neutral"
     },
     {
@@ -213,15 +213,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": -0.0001752653570597,
-        "bitget": -2.1e-05,
+        "okx": -1.24661686865e-05,
+        "bitget": 0.0001,
         "gate": null,
-        "kucoin": -0.000159,
-        "mexc": 4.9e-05,
+        "kucoin": -0.000168,
+        "mexc": 3.2e-05,
         "hyperliquid": 0.0001,
         "lighter": null
       },
-      "average": -4.1253071411939993e-05,
+      "average": 1.0306766262700002e-05,
       "sentiment": "neutral"
     },
     {
@@ -229,15 +229,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": 3.7871869386e-05,
-        "bitget": 0.0001,
+        "okx": -0.0001143922981452,
+        "bitget": -2.8e-05,
         "gate": null,
-        "kucoin": -0.000616,
-        "mexc": 4.3e-05,
-        "hyperliquid": 0.0001,
+        "kucoin": -0.000191,
+        "mexc": -0.000156,
+        "hyperliquid": -0.0002040664,
         "lighter": null
       },
-      "average": -6.70256261228e-05,
+      "average": -0.00013869173962903998,
       "sentiment": "neutral"
     },
     {
@@ -245,15 +245,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": 3.15202609964e-05,
-        "bitget": -8.3e-05,
+        "okx": 0.0001,
+        "bitget": 5.5e-05,
         "gate": null,
-        "kucoin": -0.000222,
-        "mexc": -0.000121,
+        "kucoin": -0.000118,
+        "mexc": 6.9e-05,
         "hyperliquid": 0.0001,
         "lighter": null
       },
-      "average": -5.889594780072e-05,
+      "average": 4.1200000000000005e-05,
       "sentiment": "neutral"
     },
     {
@@ -261,15 +261,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": -5.4509065203e-06,
-        "bitget": 3.9e-05,
+        "okx": 1.21258789151e-05,
+        "bitget": -7.6e-05,
         "gate": null,
-        "kucoin": -4e-05,
-        "mexc": 6e-06,
-        "hyperliquid": 0.0001,
+        "kucoin": -9.6e-05,
+        "mexc": -2e-05,
+        "hyperliquid": 3.01472e-05,
         "lighter": null
       },
-      "average": 1.9909818695940003e-05,
+      "average": -2.994538421698e-05,
       "sentiment": "neutral"
     },
     {
@@ -277,15 +277,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": 4.37592169834e-05,
+        "okx": 0.0001,
         "bitget": 0.0001,
         "gate": null,
-        "kucoin": 5.2e-05,
-        "mexc": 5.7e-05,
+        "kucoin": -6.7e-05,
+        "mexc": 5.2e-05,
         "hyperliquid": 0.0001,
         "lighter": null
       },
-      "average": 7.055184339667999e-05,
+      "average": 5.6999999999999996e-05,
       "sentiment": "neutral"
     },
     {
@@ -293,15 +293,15 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": -0.0001798106371527,
-        "bitget": -0.000262,
+        "okx": -0.0001930513617543,
+        "bitget": -0.000317,
         "gate": null,
-        "kucoin": 9e-06,
-        "mexc": -0.000257,
-        "hyperliquid": -0.0001104936,
+        "kucoin": 0.0001,
+        "mexc": -0.000397,
+        "hyperliquid": -0.0001465736,
         "lighter": null
       },
-      "average": -0.00016006084743054003,
+      "average": -0.00019072499235085999,
       "sentiment": "neutral"
     },
     {
@@ -309,22 +309,22 @@
       "rates": {
         "binance": null,
         "bybit": null,
-        "okx": 9.34741535149e-05,
+        "okx": 9.43963599981e-05,
         "bitget": 0.0001,
         "gate": null,
-        "kucoin": 2.5e-05,
-        "mexc": 1.8e-05,
-        "hyperliquid": 0.0001330496,
+        "kucoin": 3e-06,
+        "mexc": 2.5e-05,
+        "hyperliquid": -0.0001083688,
         "lighter": null
       },
-      "average": 7.390475070298002e-05,
+      "average": 2.2805511999620004e-05,
       "sentiment": "neutral"
     }
   ],
   "summary": {
     "bullish": 0,
-    "bearish": 0,
-    "neutral": 20
+    "bearish": 1,
+    "neutral": 19
   },
   "exchanges": [
     {
@@ -373,5 +373,5 @@
       "type": "dex"
     }
   ],
-  "lastUpdated": "2026-06-03T07:33:49.482094Z"
+  "lastUpdated": "2026-06-04T07:30:36.627634Z"
 }
